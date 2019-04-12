@@ -1,6 +1,6 @@
 ﻿using RevivingSun.DataStore;
 using RevivingSun.Messages;
-using Reviving.Model;
+using RevivingSun.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
