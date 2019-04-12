@@ -1,5 +1,5 @@
 ﻿using BreakinIn.Messages;
-using BreakinIn.Model;
+using RevivingSun.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,13 +9,13 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace BreakinIn
+namespace RevivingSun
 {
     public class EAClient
     {
         public AbstractEAServer Context;
         public User User;
-        public string IP = "127.0.0.1";
+        public string IP = "10.0.0.1";
         public string Port = null;
         public int SessionID;
 
