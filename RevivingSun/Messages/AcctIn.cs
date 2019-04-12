@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BreakinIn.Messages
+namespace RevivingSun.Messages
 {
     public class AcctIn : AbstractMessage
     {
