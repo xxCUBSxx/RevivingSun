@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BreakinIn
+namespace RevivingSun
 {
     public class Program
     {
