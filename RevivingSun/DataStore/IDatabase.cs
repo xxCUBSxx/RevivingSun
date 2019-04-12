@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BreakinIn.DataStore
+namespace RevivingSun.DataStore
 {
     public interface IDatabase
     {
