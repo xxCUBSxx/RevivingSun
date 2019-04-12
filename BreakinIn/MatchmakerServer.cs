@@ -1,12 +1,12 @@
-﻿using BreakinIn.DataStore;
-using BreakinIn.Messages;
-using BreakinIn.Model;
+﻿using RevivingSun.DataStore;
+using RevivingSun.Messages;
+using Reviving.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace BreakinIn
+namespace RevivingSun
 {
     public class MatchmakerServer : AbstractEAServer
     {
@@ -18,18 +18,13 @@ namespace BreakinIn
                 { "room", null }, //create room. NAME=name, return (room, +who, +msg, +rom to all, +usr)
                 { "auxi", typeof(Auxi) }, //auxiliary information. returned as X attribute in +usr and +who
                 { "auth", typeof(AuthIn) },
-                { "acct", typeof(AcctIn) },
                 { "~png", typeof(Ping) },
-                { "cper", typeof(CperIn) }, //create persona. (NAME) in, (PERS, NAME) out. where name is username.
-                { "dper", typeof(DperIn) }, //delete persona
-                { "pers", typeof(PersIn) }, //select persona
                 { "skey", typeof(SKeyIn) }, //session key?
                 { "sele", typeof(SeleIn) }, //gets info for the current server
                 { "user", typeof(UserIn) }, //get my user info
                 { "onln", typeof(OnlnIn) }, //search for a user's info
                 { "addr", typeof(Addr) }, //the client tells us their IP and port (ephemeral). The IP is usually wrong.
 
-                { "chal", typeof(Chal) }, //enter challenge mode
 
                 //need for speed
                 { "glea", null }, //leave game (string NAME)
@@ -52,16 +47,12 @@ namespace BreakinIn
         public MatchmakerServer(ushort port) : base(port)
         {
             Database = new JSONDatabase();
-            Rooms.Server = this;
+            Region.Server = this;
 
             PingThread = new Thread(PingLoop);
             PingThread.Start();
 
-            Rooms.AddRoom(new Room() { Name = "Veronaville", IsGlobal = true });
-            Rooms.AddRoom(new Room() { Name = "Strangetown", IsGlobal = true });
-            Rooms.AddRoom(new Room() { Name = "Pleasantview", IsGlobal = true });
-            Rooms.AddRoom(new Room() { Name = "Belladonna Cove", IsGlobal = true });
-            Rooms.AddRoom(new Room() { Name = "Riverblossom Hills", IsGlobal = true });
+            Region.AddRoom(new Room() { Name = "USEAST", IsGlobal = true });
         }
 
         public void PingLoop()
@@ -100,14 +91,6 @@ namespace BreakinIn
             }
         }
 
-        public void SendToPersona(string name, AbstractMessage msg)
-        {
-            var user = Users.GetUserByPersonaName(name);
-            if (user != null)
-            {
-                user.Connection?.SendMessage(msg);
-            }
-        }
 
         public void TryLogin(DbAccount user, EAClient client)
         {
