@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace BreakinIn.DataStore
+namespace RevivingSun.DataStore
 {
     public class JSONDatabase : IDatabase
     {
