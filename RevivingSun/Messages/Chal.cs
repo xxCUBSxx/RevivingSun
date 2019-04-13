@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-using BreakinIn.Model;
+using RevivingSun.Model;
 
 namespace RevivingSun.Messages
 {
