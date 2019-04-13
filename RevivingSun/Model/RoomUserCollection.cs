@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BreakinIn.Model
+namespace RevivingSun.Model
 {
     public class RoomUserCollection : UserCollection
     {
