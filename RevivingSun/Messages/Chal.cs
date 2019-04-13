@@ -4,7 +4,7 @@ using System.Text;
 using System.Linq;
 using BreakinIn.Model;
 
-namespace BreakinIn.Messages
+namespace RevivingSun.Messages
 {
     public class Chal : AbstractMessage
     {
