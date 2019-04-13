@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-using BreakinIn.Messages;
+using RevivingSun.Messages;
 
-namespace BreakinIn.Model
+namespace RevivingSun.Model
 {
     public class RoomCollection
     {
